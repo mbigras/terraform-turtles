@@ -1,18 +1,7 @@
-variable "config" {
-  type = object({
-    detail3 = string
-  })
+module "mod3" {
+  source = "./mod3"
 }
 
-output "config" {
-  value = var.config
-}
-
-module "mod2" {
-  source = "./mod2"
-  config = var.config
-}
-
-output "mod2" {
-  value = module.mod2
+output "mod3" {
+  value = module.mod3
 }
