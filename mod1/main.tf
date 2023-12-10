@@ -1,5 +1,6 @@
 variable "config" {
   type = object({
+    detail1 = optional(string, "reasonable mod1 default")
     detail2 = string
     detail3 = string
   })
@@ -7,13 +8,4 @@ variable "config" {
 
 output "config" {
   value = var.config
-}
-
-module "mod1" {
-  source = "./mod1"
-  config = var.config
-}
-
-output "mod1" {
-  value = module.mod1
 }
